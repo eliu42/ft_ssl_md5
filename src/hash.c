@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   hash.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eliu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 14:38:56 by eliu              #+#    #+#             */
-/*   Updated: 2018/11/22 21:47:57 by eliu             ###   ########.fr       */
+/*   Created: 2018/11/22 19:59:58 by eliu              #+#    #+#             */
+/*   Updated: 2018/11/22 22:32:35 by eliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl_md5.h"
 
-void	init_data(t_data *data)
-{
-//	data->encryption_alg = NULL;
-	data->string = NULL;
-	data->encrypted_s = NULL;
-	data->next = NULL;
-	return ;
-}
+/*
+t_cmd	g_cmds[3] = {
+	{"md5", md5},
+	{"sha256", sha256},
+	{NULL, NULL}
+};
+*/
 
-static void	init_flags(t_flag *flags)
+void	determine_algorithm(t_data *data, char *command)
 {
-	flags->q = 0;
-	flags->r = 0;
-	flags->s = 0;
-	flags->t = 0;
-	return ;
-}
-
-void	init_state(t_flag *flags, t_data *data)
-{
-	init_flags(flags);
-	init_data(data);
+	// Fix this later, no ugly code.
+	if (strcmp(command, "md5"))
+		md5(data);
+	else if (strcmp(command, "sha256"), strcmp(command, "sha-256"))
+		sha256(data);
 	return ;
 }

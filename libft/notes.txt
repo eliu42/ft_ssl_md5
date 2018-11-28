@@ -1,0 +1,13 @@
+impossible to compile libft with -Wcast-qual because of ft_strstr and ft_memchr and friends.?
+
+The functions require that we change a (const X *) parameter into an X * return value, which is not really proper C. 
+
+Flags in C:
+	* -ftrapv cause: the program to abort on signed integer overflow.
+	* -fverbose-asm: is useful if compiling with -S to examine the assembly output. It adds some informative comments.
+	* -finstrument-functions: adds code to call user-supplied profiling functions at every function entry and exit point.
+	* -Wfloat-equal: useful because usually testing floating-piont numbers for equality is bad.
+	* -Wundef: warn if an unitialized identifier is evaluated in an #if directive.
+	* -Wshadow: warn whenever a 
+
+

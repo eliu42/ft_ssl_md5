@@ -6,7 +6,7 @@
 #    By: eliu <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/22 11:02:46 by eliu              #+#    #+#              #
-#    Updated: 2018/11/22 17:13:45 by eliu             ###   ########.fr        #
+#    Updated: 2018/11/22 22:33:41 by eliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,16 @@ NAME = ./ft_ssl
 CC = gcc
 C_FLAGS = -Wall -Wextra -Werror
 INC_FLAGS = -I include
+LIBRARY = ./libft/libft.a
 
 FILE_NAMES = main.c \
+			 hash.c \
 			 init.c \
 			 parse.c \
 			 store.c \
+			 md5.c \
+			 sha256.c \
+
 			 
 SRC_PATH = ./src/
 SRC_FILES = $(addprefix ./src/, $(FILE_NAMES))
@@ -32,9 +37,7 @@ OBJ_FILES = $(addprefix $(OBJ_PATH), $(FILE_NAMES):.c=.o)
 all: $(NAME)
 
 $(NAME): $(SRC_FILES)
-	$(CC) $(C_FLAGS) $(INC_FLAGS) $(SRC_FILES) -o $(NAME)
-	mkdir obj
-	mv *.o obj
+	$(CC) $(C_FLAGS) $(INC_FLAGS) $(SRC_FILES) -o $(NAME) $(LIBRARY)
 
 clean:
 	rm -rf $(OBJ_PATH)

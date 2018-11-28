@@ -1,0 +1,3 @@
+Concepts to understand in completing the project:
+	1) What is a checksum?
+	2) 

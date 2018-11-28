@@ -6,7 +6,7 @@
 /*   By: eliu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 13:56:14 by eliu              #+#    #+#             */
-/*   Updated: 2018/11/22 16:38:58 by eliu             ###   ########.fr       */
+/*   Updated: 2018/11/22 22:29:54 by eliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int		main(int argc, char **argv)
 {
 	int		i;
-	t_flag	*flags;
-	t_data	*data;
+	t_flag	*flags = NULL;
+	t_data	*data = NULL;
 	if (argc < 2)
 	{
 		ft_putstr("Usage:\n");
@@ -26,13 +26,12 @@ int		main(int argc, char **argv)
 	// Initializaion of structures and what they hold.
 	init_state(flags, data);
 
-	i = 0;
+	i = 2;
 	// Parse through the flags and options here
-	determine_algorithm(argv, data, &i);
+	determine_algorithm(data, argv[1]);
 	parse_options(argv, flags, &i);
 	store_strings_to_encrypt(argv, data, &i);
-	
-	
+
 	return (0);
 }
 
