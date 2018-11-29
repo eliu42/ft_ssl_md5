@@ -6,7 +6,7 @@
 /*   By: eliu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 19:59:58 by eliu              #+#    #+#             */
-/*   Updated: 2018/11/22 22:32:35 by eliu             ###   ########.fr       */
+/*   Updated: 2018/11/28 14:52:53 by eliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,13 @@ t_cmd	g_cmds[3] = {
 void	determine_algorithm(t_data *data, char *command)
 {
 	// Fix this later, no ugly code.
-	if (strcmp(command, "md5"))
+	if (!ft_strcmp(command, "md5"))
+	{
 		md5(data);
-	else if (strcmp(command, "sha256"), strcmp(command, "sha-256"))
+	}
+	else if (!ft_strcmp(command, "sha256") || !ft_strcmp(command, "sha-256"))
+	{
 		sha256(data);
+	}
 	return ;
 }

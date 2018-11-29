@@ -1,39 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   digest.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eliu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 14:38:56 by eliu              #+#    #+#             */
-/*   Updated: 2018/11/28 14:54:12 by eliu             ###   ########.fr       */
+/*   Created: 2018/11/28 17:37:11 by eliu              #+#    #+#             */
+/*   Updated: 2018/11/28 19:02:22 by eliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl_md5.h"
 
-void	init_data(t_data *data)
-{
-//	data->encryption_alg = NULL;
-	data->string = NULL;
-//	data->length = NULL;
-	data->encrypted_s = NULL;
-	data->next = NULL;
+void	aux_f(t_data *data)
+{ 
+	// F(X, Y, Z) = (X & Y) | (~X & Z)
 	return ;
 }
 
-static void	init_flags(t_flag *flags)
+void	aux_g(t_data *data)
 {
-	flags->q = 0;
-	flags->r = 0;
-	flags->s = 0;
-	flags->t = 0;
+	// G(X, Y, Z) = (X & Y) | (X & ~Z)
 	return ;
 }
 
-void	init_state(t_flag *flags, t_data *data)
+void	aux_h(t_data *data)
 {
-	init_flags(flags);
-	init_data(data);
+	// H(X, Y, Z) = X ^ Y ^ Z
+	return ;
+}
+
+void	aux_i(t_data *data)
+{
+	// I(X, Y, Z) = Y ^ (X & ~Z)
+	return ;
+}
+
+void	process_message_blocks(t_data *data)
+{
+	
 	return ;
 }

@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   md5.c                                              :+:      :+:    :+:   */
+/*   append.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eliu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 22:04:06 by eliu              #+#    #+#             */
-/*   Updated: 2018/11/28 21:13:47 by eliu             ###   ########.fr       */
+/*   Created: 2018/11/28 17:28:14 by eliu              #+#    #+#             */
+/*   Updated: 2018/11/28 18:54:41 by eliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ssl_md5.h"
-
-// 1) Append padding bits. Done? but still needs to be tested. I am not sure how to. Create a print memory function to print out values.
-//
-// 2) Append Length. Create itoa_base function to append length of str in hex
-// 3) Initialize MD buffer.
 
 /*
 **	1) Take the total length of the string.
@@ -24,17 +19,35 @@
 **	4) Take original string length % 2^64, convert to hex, and append to str
 */
 
-// data->string (char *str) to be altered.
-
-void	md5(t_data *data)
+static void append_hex_length(t_data *data)
 {
-	const int		a0 = 0x67452301;
-	const int		b0 = 0xefcdab89;
-	const int		c0 = 0x98badcfe;
-	const int		d0 = 0x10325476;
+	char	*hex;
 
-	append_data(data);
-	process_message_blocks(data);
+	hex = itoa_base(data->length, 16);
+	data->string = ft_strjoin_memdel(data->string, hex);
+	return ;
+}
 
+static void	append_padding(t_data *data)
+{
+	int		padlen;
+	char	*padstr;
+
+	padlen = data->length % 64;
+	if (padlen < 56)
+	{
+		padlen += 64;
+	}
+	padstr = malloc(sizeof(char*) * (56 - padlen + 1));
+	bzero(padstr);
+	padstr = padstr + (1 << (padlen * 8 - 1));
+	return ;
+}
+
+void	append_data(t_data *data)
+{
+	data->length = ft_strlen(data->string) % 2 ** 64;
+	append_padding(data);
+	append_length(data);
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: eliu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 14:18:57 by eliu              #+#    #+#             */
-/*   Updated: 2018/11/22 21:51:42 by eliu             ###   ########.fr       */
+/*   Updated: 2018/11/28 14:52:28 by eliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	create_new_node(t_data *data, char *str)
 
 void	store_strings_to_encrypt(char **argv, t_data *data, int *i)
 {
-	data->string = strdup(argv[*i]);
+	data->string = ft_strdup(argv[*i]);
+	data->string = (argv[*i]);
 	*i += 1;
 	while (argv[*i])
 	{
