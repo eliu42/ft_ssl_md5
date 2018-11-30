@@ -22,7 +22,7 @@ int		ft_atoi(const char *str)
 	negative = 1;
 	if (*str == '-')
 		negative = -1;
-	if (*str == '-' | *str == '+')
+	if (*str == '-' || *str == '+')
 		str++;
 	num = 0;
 	while (*str >= '0' && *str <= '9')

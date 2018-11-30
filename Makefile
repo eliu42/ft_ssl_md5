@@ -14,16 +14,22 @@ NAME = ./ft_ssl
 
 CC = gcc
 C_FLAGS = -Wall -Wextra -Werror
+CLANG = -g
 INC_FLAGS = -I include
 LIBRARY = ./libft/libft.a
 
 FILE_NAMES = main.c \
-			 hash.c \
-			 init.c \
-			 parse.c \
-			 store.c \
-			 md5.c \
-			 sha256.c \
+	     append.c \
+	     hash.c \
+	     init.c \
+	     parse.c \
+	     process_message_blocks.c \
+	     store.c \
+	     md5.c \
+	     sha256.c \
+		output.c \
+
+#	     auxiliary.c \
 
 			 
 SRC_PATH = ./src/
@@ -38,6 +44,9 @@ all: $(NAME)
 
 $(NAME): $(SRC_FILES)
 	$(CC) $(C_FLAGS) $(INC_FLAGS) $(SRC_FILES) -o $(NAME) $(LIBRARY)
+
+clang: $(SRC_FILES)
+	$(CC) $(CLANG) $(C_FLAGS) $(INC_FLAGS) $(SRC_FILES) -o $(NAME) $(LIBRARY)
 
 clean:
 	rm -rf $(OBJ_PATH)

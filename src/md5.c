@@ -28,11 +28,12 @@
 
 void	md5(t_data *data)
 {
+/*
 	const int		a0 = 0x67452301;
 	const int		b0 = 0xefcdab89;
 	const int		c0 = 0x98badcfe;
 	const int		d0 = 0x10325476;
-
+*/
 	append_data(data);
 	process_message_blocks(data);
 

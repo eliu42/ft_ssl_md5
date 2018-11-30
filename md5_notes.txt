@@ -1,3 +1,5 @@
 Concepts to understand in completing the project:
 	1) What is a checksum?
 	2) 
+
+make sure to install lldb when we get back

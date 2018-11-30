@@ -17,7 +17,7 @@ void	*ft_memcpy_bwd(void *dst, const void *src, size_t len)
 	unsigned char *source;
 	unsigned char *dest;
 
-	if (src == dst | len == 0)
+	if (src == dst || len == 0)
 		return (dst);
 	source = (unsigned char*)src;
 	dest = (unsigned char*)dst;

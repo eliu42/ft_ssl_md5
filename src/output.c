@@ -23,18 +23,55 @@
 **		- Print a checksum of the given string.
 */
 
+void	flag_p(t_data *data)
+{
+	ft_putendl("tempstring");
+	(void)data;
+	return ;
+}
+
+void	flag_q(t_data *data)
+{
+	ft_putendl("tempstring");
+	(void)data;
+	return ;
+}
+
+/*
+**	What is the order that things should be outputted in?
+**		A:
+**	Then what is the reversed order?
+**		A:
+*/
+
+void	flag_r(t_data *data)
+{
+	ft_putendl("tempstring");
+	(void)data;
+	return ;
+}
+
+void	flag_s(t_data *data)
+{
+	ft_putendl("tempstring");
+	(void)data;
+	return ;
+}
+
 void	reverse_format(char *string)
 {
+	(void)string;
 	return ;
 }
 
 void	find_checksum(char *string)
 {
+	(void)string;
 	return ;
 }
 
 void	output(t_data *data)
 {
-	
+	(void)data;	
 	return ;
 }
