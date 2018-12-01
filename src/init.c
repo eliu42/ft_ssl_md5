@@ -16,8 +16,8 @@ void	init_data(t_data *data)
 {
 //	data->encryption_alg = NULL;
 	data->string = NULL;
-//	data->length = NULL;
-	data->encrypted_s = NULL;
+	data->hex_length = NULL;
+	data->message_digest = NULL;
 	data->next = NULL;
 	return ;
 }

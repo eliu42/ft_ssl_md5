@@ -19,35 +19,47 @@
 **	4) Take original string length % 2^64, convert to hex, and append to str
 */
 
-static void append_hex_length(t_data *data)
+static void	find_data_len(t_data *data)
 {
-	char	*hex;
+	int	len;
 
-	hex = itoa_base(data->length, 16);
-	data->string = ft_strjoin_memdel(data->string, hex);
+	len = ft_strlen(data->string);
+	data->hex_length = ft_itoa_base(len, 16);
+	return ;
+}
+
+static void	append_hex_length(t_data *data)
+{
+	find_data_len(data);
+	data->string = ft_strjoin_memdel(data->string, data->hex_length);
 	return ;
 }
 
 static void	append_padding(t_data *data)
 {
 	int		padlen;
-	char	*padstr;
+	char		*padstr;
 
-	padlen = data->length % 64;
+	padlen = ft_strlen(data->string) % 64;
 	if (padlen < 56)
 	{
 		padlen += 64;
 	}
 	padstr = malloc(sizeof(char*) * (56 - padlen + 1));
-	bzero(padstr);
+	ft_bzero(padstr, strlen(padstr));
 	padstr = padstr + (1 << (padlen * 8 - 1));
 	return ;
 }
 
 void	append_data(t_data *data)
 {
-	data->length = ft_strlen(data->string) % 2 ** 64;
+	int	len;
+	char	*hex;
+
+	len = ft_strlen(data->string) % ft_expn(2, 64);
+	hex = ft_itoa_base(len, 16);
+	data->hex_length = hex;
 	append_padding(data);
-	append_length(data);
+	append_hex_length(data);
 	return ;
 }

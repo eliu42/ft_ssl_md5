@@ -13,7 +13,9 @@
 NAME = libft.a
 
 FILES = atoi \
+		itoa_base \
 		bzero \
+		expn \
 		isascii \
 		isalnum \
 		isalpha \
