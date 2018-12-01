@@ -6,7 +6,7 @@
 #    By: eliu <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 18:27:38 by eliu              #+#    #+#              #
-#    Updated: 2017/01/19 12:49:55 by eliu             ###   ########.fr        #
+#    Updated: 2018/11/28 14:29:03 by eliu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRC_FILES)
 	gcc $(CFLAGS) -c $(SRC_FILES)
 	ar rc $(NAME) $(OBJ_FILES)
 	ranlib $(NAME)

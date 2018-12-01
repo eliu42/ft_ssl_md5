@@ -6,7 +6,7 @@
 /*   By: eliu <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 13:57:03 by eliu              #+#    #+#             */
-/*   Updated: 2018/11/22 22:33:17 by eliu             ###   ########.fr       */
+/*   Updated: 2018/11/28 18:59:36 by eliu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_SSL_MD5_H
 
 #include "../libft/libft.h"
+#include <stdio.h>
 
 // Something to keep track of flags for final output
 typedef struct		s_flag
@@ -25,13 +26,21 @@ typedef struct		s_flag
 }					t_flag;
 // Something to store the string as well as the hashed output.
 
+typedef struct		s_block
+{
+	char			*node;
+	struct s_block	*next;
+}					t_block;
+
 typedef struct 		s_data
 {
 //	char			*encryption_alg;
 	char			*string;
 	char			*encrypted_s;
+	struct s_block	*blocks;
 	struct s_data	*next;
 }					t_data;
+
 
 typedef struct		s_crypt
 {
