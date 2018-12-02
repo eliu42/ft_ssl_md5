@@ -1,5 +1,22 @@
 Concepts to understand in completing the project:
 	1) What is a checksum?
-	2) 
+	2) What are the differenes between md5 and previous versions?
 
 make sure to install lldb when we get back
+
+for loops:
+
+	How do I make this in while?
+
+	First 16: auf_f()func.this;
+	second 16: auf_g()func.this.
+	third 16: auf_h()func.this.
+	fourth 16: auf_i()func.this.
+
+Apply checksum to results.
+
+
+
+
+
+
